@@ -17,9 +17,14 @@ def fetch_revisions(article_name):
         "redirects": ""                 # Follow redirects if the article name changes
     }
 
+    headers = {
+        "User-Agent": "CS222_Project1_WikipediaClient/1.0 (zak.keffaber@bsu.edu)"
+    } # I just inputted my email in the user client but if anyone else wants to
+      # put their email feel free
+
     try:
         # Send the GET request to Wikipedia
-        response = requests.get(url, params=params)
+        response = requests.get(url, params=params, headers=headers)
         response.raise_for_status()  # Raise an error if the request failed
 
         # Parse the JSON response
@@ -58,4 +63,5 @@ def fetch_revisions(article_name):
 
     # Handle network-related errors
     except requests.exceptions.RequestException as e:
+        print(f"Error: {e}")
         raise ConnectionError("Unable to connect to Wikipedia.") from e
