@@ -1,0 +1,1 @@
+This project is only intended to be maintained through 2025 October 27. If a security issue has been discovered, feel free to publicly disclose it. Security issues would likely be with Wikipedia's API itself (which would already be likely rare) and not a problem with this project.
